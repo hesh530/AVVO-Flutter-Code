@@ -1,6 +1,6 @@
 import 'package:aavo_project/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:aavo_project/screens/register_ui.dart';
+import 'package:aavo_project/screens/register_screen.dart';
 
 void main() {
   runApp(const MyApp());

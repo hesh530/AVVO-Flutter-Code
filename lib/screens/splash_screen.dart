@@ -1,5 +1,5 @@
-import 'register_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:aavo_project/screens/register_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({required this.title});
@@ -14,43 +14,47 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Image(
-                image: AssetImage('images/Welcome.jpg'),
-                height: 332.0,
-                width: 332.0),
-            Text(
-              'AAVO',
-              style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 64.0,
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.red),
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            child: Stack(
+              children: [
+                Container(
+                  padding: const EdgeInsets.fromLTRB(29.0, 145.0, 14.0, 335.0),
+                  child: const Image(
+                      image: AssetImage('images/Welcome.jpg'),
+                      height: 332.0,
+                      width: 332.0),
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(120.0, 477.0, 73.0, 239.0),
+                  child: const Text(
+                    'AAVO',
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 64.0,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.red),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(184.0, 559.0, 15.0, 225.0),
+                  child: const Text(
+                    'Express Services',
+                    style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal),
+                  ),
+                ),
+              ],
             ),
-            Text(
-              'Express Services',
-              style: TextStyle(
-                  fontFamily: 'Roboto',
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.w400,
-                  fontStyle: FontStyle.normal),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-            return const RegisterUi();
-          }));
-        },
-      ),
-    );
+    ));
   }
 }
